@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 11:48:16 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/04 11:50:50 by eburnet          ###   ########.fr       */
+/*   Created: 2025/02/03 11:48:19 by eburnet           #+#    #+#             */
+/*   Updated: 2025/02/04 16:00:36 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ClapTrap
+int	main()
 {
-	private:
-		std::string	name;
-		int			hit_points;
-		int			energy_points;
-		int			attack_damage;
-	public:
-		ClapTrap(std::string _name);
-		~ClapTrap();
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-};
+	ClapTrap chien("chien");
+	ClapTrap chat("chat");
+
+	for (size_t i = 0; i < 10; i++)
+	{
+		chien.attack("chat");
+		chat.takeDamage(10);
+	}
+	chien.beRepaired(50);
+
+	ScavTrap singe("singe");
+
+	singe.attack("chien");
+	singe.guardGate();
+	singe.beRepaired(15);
+
+	FragTrap lion("lion");
+
+	lion.attack("singe");
+	lion.highFivesGuys();
+	lion.beRepaired(7);
+}

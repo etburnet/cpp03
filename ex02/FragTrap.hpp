@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:49:27 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/04 16:03:25 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/05 10:37:08 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #define FRAG_TRAP_HPP
 #include "ClapTrap.hpp"
 #endif
-
-
 
 class FragTrap : public ClapTrap
 {

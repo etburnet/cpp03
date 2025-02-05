@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:48:13 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/04 11:50:35 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/05 10:38:20 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->energy_points <= 0)
 	{
-		std::cout << "ClapTrap" << this->name << "have 0 energy points left !" << std::endl;
+		std::cout << "ClapTrap " << this->name << " have 0 energy points left !" << std::endl;
 		return ;
 	}
 	this->energy_points--;

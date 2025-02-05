@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:48:19 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/04 16:00:36 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/05 10:39:31 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ int	main()
 	ScavTrap singe("singe");
 
 	singe.attack("chien");
+	chien.takeDamage(10);
 	singe.guardGate();
 	singe.beRepaired(15);
 
 	FragTrap lion("lion");
 
 	lion.attack("singe");
+	singe.takeDamage(10);
 	lion.highFivesGuys();
 	lion.beRepaired(7);
 }

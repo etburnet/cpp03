@@ -6,16 +6,16 @@
 #    By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 11:48:21 by eburnet           #+#    #+#              #
-#    Updated: 2025/02/04 14:46:59 by eburnet          ###   ########.fr        #
+#    Updated: 2025/02/05 10:37:24 by eburnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = clapScavTrack
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
-HEADERS = ClapTrap.hpp ScavTrap.hpp
+HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 all: $(NAME)
 

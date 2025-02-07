@@ -6,22 +6,12 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 10:45:25 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/07 12:57:40 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/07 16:32:12 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <iostream>
-
-void ScavTrap::guardGate()
-{
-	std::cout << "ScavTrap " << this->getName() << " is now in Gate keeper mode." << std::endl;
-}
-
-ScavTrap::~ScavTrap()
-{
-	std::cout << "ScavTrap Destructor called!" << std::endl;
-}
 
 ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
 {
@@ -30,6 +20,32 @@ ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
 	this->setAttackDamage(20);
+}
+
+ScavTrap::ScavTrap(const ScavTrap &other, std::string _name) : ClapTrap(_name)
+{
+	std::cout << "ScavTrap Copy Constructor called!" << std::endl;
+	ScavTrap::operator=(other);
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap &other)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->setAttackDamage(ScavTrap(other).getAttackDamage());
+	this->setEnergyPoints(ScavTrap(other).getEnergyPoints());
+	this->setName(ScavTrap(other).getName());
+	this->setHitPoints(ScavTrap(other).getHitPoints());
+	return (*this);
+}
+
+ScavTrap::~ScavTrap()
+{
+	std::cout << "ScavTrap Destructor called!" << std::endl;
+}
+
+void ScavTrap::guardGate()
+{
+	std::cout << "ScavTrap " << this->getName() << " is now in Gate keeper mode." << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)

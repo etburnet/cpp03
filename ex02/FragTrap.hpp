@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:49:27 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/07 12:57:53 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/07 16:31:00 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class FragTrap : public ClapTrap
 
 	public:
  		FragTrap(std::string _name);
+ 		FragTrap(const FragTrap &, std::string _name);
+ 		FragTrap& operator=(const FragTrap &);
 		~FragTrap();
 		void attack(const std::string& target);
 		void highFivesGuys(void);

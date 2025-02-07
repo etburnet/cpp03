@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:48:19 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/07 14:06:25 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/07 15:58:22 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int	main()
 		chat.takeDamage(10);
 	}
 	
+	ClapTrap poule(chien);
+
 	chien.beRepaired(50);
 }

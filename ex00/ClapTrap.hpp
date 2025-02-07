@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:48:16 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/04 11:50:50 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/07 15:20:43 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class ClapTrap
 		int			attack_damage;
 	public:
 		ClapTrap(std::string _name);
+		ClapTrap(const ClapTrap &);
+		ClapTrap& operator=(const ClapTrap&);
 		~ClapTrap();
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);

@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:49:22 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/04 15:56:52 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/07 13:10:52 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ FragTrap::~FragTrap()
 FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 {
 	std::cout << "FragTrap Constructor for " << _name << " called!" << std::endl;
-	this->name = _name;
-	this->hit_points = 100;
-	this->energy_points = 100;
-	this->attack_damage = 30;
+	this->setName(_name);
+	this->setHitPoints(100);
+	this->setEnergyPoints(100);
+	this->setAttackDamage(30);
 }
 
  void FragTrap::attack(const std::string& target)
 {
-	if (this->energy_points <= 0)
+	if (this->getEnergyPoints() <= 0)
 	{
 		std::cout << "0 energy points left !" << std::endl;
 		return ;
 	}
-	this->energy_points--;
-	std::cout << "FragTrap " << this->name << " attacks " << target << ", causing " << this->attack_damage << " points of damage!" << std::endl;
+	this->setEnergyPoints(this->getEnergyPoints() - 1);
+	std::cout << "FragTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 }

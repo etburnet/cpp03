@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:48:19 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/04 10:41:07 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/17 10:43:16 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ int	main()
 	for (size_t i = 0; i < 10; i++)
 	{
 		chien.attack("chat");
-		chat.takeDamage(10);
+		chat.takeDamage(0);
 	}
 	
 	chien.beRepaired(50);
+	chat.attack("chien");
 }

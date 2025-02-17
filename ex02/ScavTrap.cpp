@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 10:45:25 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/07 16:32:12 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/17 10:35:31 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (this->getEnergyPoints() <= 0)
+	if (this->getEnergyPoints() <= 0 || this->getHitPoints() <= 0)
 	{
 		std::cout << "0 energy points left !" << std::endl;
 		return ;

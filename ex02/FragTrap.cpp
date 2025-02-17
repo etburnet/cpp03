@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:49:22 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/07 16:31:58 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/17 10:35:47 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,20 @@ FragTrap::FragTrap(std::string _name) : ClapTrap(_name)
 	this->setAttackDamage(30);
 }
 
-FragTrap::FragTrap(const FragTrap &other, std::string _name)
+FragTrap::FragTrap(const FragTrap &other, std::string _name) : ClapTrap(_name)
 {
 	std::cout << "FragTrap Copy Constructor called!" << std::endl;
+	FragTrap::operator=(other);
 }
 
-FragTrap& FragTrap::operator=(const FragTrap &)
+FragTrap& FragTrap::operator=(const FragTrap &other)
 {
-	
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->setAttackDamage(FragTrap(other).getAttackDamage());
+	this->setEnergyPoints(FragTrap(other).getEnergyPoints());
+	this->setName(FragTrap(other).getName());
+	this->setHitPoints(FragTrap(other).getHitPoints());
+	return (*this);
 }
 
 FragTrap::~FragTrap()
@@ -44,7 +50,7 @@ void FragTrap::highFivesGuys()
 
  void FragTrap::attack(const std::string& target)
 {
-	if (this->getEnergyPoints() <= 0)
+	if (this->getEnergyPoints() <= 0 || this->getHitPoints() <= 0)
 	{
 		std::cout << "0 energy points left !" << std::endl;
 		return ;

@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 10:45:25 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/17 10:35:31 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/18 13:11:49 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,22 @@
 ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
 {
 	std::cout << "ScavTrap " << _name << " Constructor called!" << std::endl;
-	this->setName(_name);
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->name = _name;
+	this->hit_points = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other, std::string _name) : ClapTrap(_name)
 {
-	std::cout << "ScavTrap Copy Constructor called!" << std::endl;
+	std::cout << "Copy Constructor called!" << std::endl;
 	ScavTrap::operator=(other);
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->setAttackDamage(ScavTrap(other).getAttackDamage());
-	this->setEnergyPoints(ScavTrap(other).getEnergyPoints());
-	this->setName(ScavTrap(other).getName());
-	this->setHitPoints(ScavTrap(other).getHitPoints());
+	ClapTrap::operator=(other);
 	return (*this);
 }
 
@@ -45,16 +42,16 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << this->getName() << " is now in Gate keeper mode." << std::endl;
+	std::cout << "ScavTrap " << this->name << " is now in Gate keeper mode." << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)
 {
-	if (this->getEnergyPoints() <= 0 || this->getHitPoints() <= 0)
+	if (this->energy_points <= 0 || this->hit_points <= 0)
 	{
 		std::cout << "0 energy points left !" << std::endl;
 		return ;
 	}
-	this->setEnergyPoints(this->getEnergyPoints() - 1);
-	std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+	this->energy_points = (this->energy_points - 1);
+	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attack_damage << " points of damage!" << std::endl;
 }

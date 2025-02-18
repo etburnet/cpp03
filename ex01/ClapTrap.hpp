@@ -6,7 +6,7 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:48:16 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/07 15:27:03 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/18 13:08:43 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	name;
 		int			hit_points;
 		int			energy_points;
@@ -27,12 +27,4 @@ class ClapTrap
 		virtual void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		std::string getName();
-		void setName(std::string _name);
-		int getHitPoints();
-		void setHitPoints(int _hitPoints);
-		int getEnergyPoints();
-		void setEnergyPoints(int _energyPoints);
-		int getAttackDamage();
-		void setAttackDamage(int _attackDamage);
 };

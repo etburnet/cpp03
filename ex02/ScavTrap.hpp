@@ -6,20 +6,16 @@
 /*   By: eburnet <eburnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 10:44:59 by eburnet           #+#    #+#             */
-/*   Updated: 2025/02/07 16:29:53 by eburnet          ###   ########.fr       */
+/*   Updated: 2025/02/18 13:15:38 by eburnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <string>
-#ifndef SCAV_TRAP_HPP
-#define SCAV_TRAP_HPP
 #include "ClapTrap.hpp"
-#endif
 
 class ScavTrap : public ClapTrap
 {
-	private:
-		
 	public:
  		ScavTrap(std::string _name);
 		ScavTrap(const ScavTrap&, std::string _name);
